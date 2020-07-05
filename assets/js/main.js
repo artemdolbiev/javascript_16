@@ -12,9 +12,12 @@ console.log('Sample JavaScript #2 HW #16');
  */
 
 var userObj = {
-  firstName: 'Имя',
   age: 25,
-  lastName: 'Фамилия'
+  firstName: 'Имя',
+  lastName: 'Фамилия',
+  fullName() {
+    return `${userObj.firstName} ${userObj.lastName}`;
+  }
 };
 
 console.log(userObj);
@@ -30,13 +33,6 @@ console.log(userObj);
  * userObj.lastName ← Фамилия'
  * userObj.fullName() → 'Имя Фамилия'.
  */
-var userObj = {
-  firstName: 'Имя',
-  lastName: 'Фамилия',
-  fullName() {
-    return `${userObj.firstName} ${userObj.lastName}`;
-  }
-};
 
 console.log(userObj.fullName()); // Имя Фамилия
 
