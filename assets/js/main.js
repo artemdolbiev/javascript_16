@@ -10,14 +10,14 @@ console.log('Sample JavaScript #2 HW #16');
  * lastName – любая фамилия, строка
  * age – любой возраст, число
  */
+
 var userObj = {
-  age: 25,
   firstName: 'Имя',
+  age: 25,
   lastName: 'Фамилия'
 };
 
 console.log(userObj);
-
 
 /*
  * #2
@@ -54,10 +54,13 @@ console.log(userObj.fullName()); // Имя Фамилия
  * При выполнении задачи не используйте оператор if, требуется решение с логическим оператором ||.
  */
 
-/* eslint-disable capitalized-comments */
-// console.log(defUpperStr('My text')); // MY TEXT
+function defUpperStr(str) {
+  return (str || 'Default Text').toUpperCase();
+}
 
-// console.log(defUpperStr()); // DEFAULT TEXT
+console.log(defUpperStr('My text')); // MY TEXT
+
+console.log(defUpperStr()); // DEFAULT TEXT
 
 /*
  * #4
@@ -76,11 +79,19 @@ console.log(userObj.fullName()); // Имя Фамилия
  * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
  */
 
-// console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+function evenFn(n) {
+  var arr = [];
 
-// console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+  for (var i = 1; i <= n; i++) if (i % 2 ===0) arr.push(i);
 
-// console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  return arr;
+}
+
+console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+
+console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+
+console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 /*
  * #5
@@ -97,17 +108,50 @@ console.log(userObj.fullName()); // Имя Фамилия
  * В реализации функции обязательно должны быть использованы операторы switch / case / default.
  */
 
-// console.log(weekFn(1)); // 'Понедельник'
+function weekFn(n) {
+  var str = '';
 
-// console.log(weekFn(3)); // 'Среда'
+  switch (n) {
+    case 1:
+      str = "Понедельник";
+      break;
+    case 2:
+      str = 'Вторник';
+      break;
+    case 3:
+      str = 'Среда';
+      break;
+    case 4:
+      str = 'Четверг';
+      break;
+    case 5:
+      str = 'Пятница';
+      break;
+    case 6:
+      str = 'Суббота';
+      break;
+    case 7:
+      str = 'Воскресенье';
+      break;
+    default:
+      str = null;
 
-// console.log(weekFn(7)); // 'Воскресенье'
+  }
 
-// console.log(weekFn(9)); // null
+  return str;
+}
 
-// console.log(weekFn(1.5)); // null
+console.log(weekFn(1)); // 'Понедельник'
 
-// console.log(weekFn('2')); // null
+console.log(weekFn(3)); // 'Среда'
+
+console.log(weekFn(7)); // 'Воскресенье'
+
+console.log(weekFn(9)); // null
+
+console.log(weekFn(1.5)); // null
+
+console.log(weekFn('2')); // null
 
 /*
  * #6
@@ -170,11 +214,19 @@ console.log('150 :', ageClassification(150));
  * oddFn(20) → [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
  */
 
-// console.log(oddFn(10)); // [1, 3, 5, 7, 9]
+function oddFn(n) {
+  var arr = [];
+  var i = 0;
 
-// console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
+  while (i++ < n) if (i % 2 !== 0) arr.push(i);
 
-// console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+  return arr;
+}
+console.log(oddFn(10)); // [1, 3, 5, 7, 9]
+
+console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
+
+console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 /*
  * #8
